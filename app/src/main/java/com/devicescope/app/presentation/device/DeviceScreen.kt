@@ -64,7 +64,8 @@ fun DeviceScreen(
                 "Device" to info.device,
                 "Product" to info.product,
                 "Board" to info.board,
-                "Hardware" to info.hardware
+                "Hardware" to info.hardware,
+                "Bootloader" to info.bootloader
             )
         )
 
@@ -73,7 +74,17 @@ fun DeviceScreen(
             items = listOf(
                 "Android Version" to info.androidVersion,
                 "API Level" to info.apiLevel.toString(),
-                "Build ID" to info.buildId
+                "Security_Patch" to info.securityPatch,
+                "Build ID" to info.buildId,
+                "Build_Display" to info.buildDisplay
+            )
+        )
+
+        DeviceInfoCard(
+            title = "Architecture",
+            items = listOf(
+                "64-bit ABIs" to info.supportAbis64.joinToString(", "),
+                "32-bit ABIs" to info.supportAbis32.joinToString(", ")
             )
         )
     }

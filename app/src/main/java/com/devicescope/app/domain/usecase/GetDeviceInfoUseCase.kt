@@ -17,9 +17,17 @@ data class GetDeviceInfoUseCase(
             product = data.product,
             board = data.board,
             hardware = data.hardware,
+            bootloader = data.bootloader,
+
             androidVersion = data.androidVersion,
             apiLevel = data.apiLevel,
-            buildId = data.buildId
+            securityPatch = data.securityPatch,
+            buildId = data.buildId,
+            buildDisplay = data.buildDisplay,
+            buildFingerprint = data.buildFingerprint,
+
+            supportAbis64 = data.supportedAbis64,
+            supportAbis32 = data.supportAbis32
         )
     }
 }

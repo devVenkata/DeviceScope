@@ -45,6 +45,10 @@ class DeviceDataSource {
     }
 
     fun getDeviceData(): DeviceData {
+
+        val supportedAbis64 = Build.SUPPORTED_64_BIT_ABIS.toList()
+        val supportAbis32 = Build.SUPPORTED_32_BIT_ABIS.toList()
+
         return DeviceData(
             manufacturer = getManufacturer(),
             brand = getBrand(),
@@ -53,9 +57,17 @@ class DeviceDataSource {
             product = getProduct(),
             board = getBoard(),
             hardware = getHardware(),
+            bootloader = Build.BOOTLOADER,
+
             androidVersion = getAndroidVersion(),
             apiLevel = getApiLevel(),
-            buildId = getBuildId()
+            securityPatch = Build.VERSION.SECURITY_PATCH,
+            buildId = getBuildId(),
+            buildDisplay = Build.DISPLAY,
+            buildFingerprint = Build.FINGERPRINT,
+
+            supportedAbis64 = supportedAbis64,
+            supportAbis32 = supportAbis32
         )
     }
 }
