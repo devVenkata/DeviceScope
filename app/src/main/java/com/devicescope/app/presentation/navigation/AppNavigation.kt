@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import com.devicescope.app.presentation.dashboard.DashboardScreen
 import com.devicescope.app.presentation.device.DeviceScreen
 import com.devicescope.app.presentation.battery.BatteryScreen
+import com.devicescope.app.presentation.usage.UsageScreen
 
 private data class NavItem(
     val title: String,
@@ -87,8 +88,8 @@ fun AppNavigation() {
 
                 "device" -> DeviceScreen()
                 "battery" -> BatteryScreen()
+                "usage" -> UsageScreen()
 
-                "usage" -> PlaceholderScreen("Usage")
                 "diagnostic" -> PlaceholderScreen("Diagnostic")
                 "history" -> PlaceholderScreen("History")
                 "settings" -> PlaceholderScreen("Settings")
